@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>OKOK</title>
+</head>
+  
+<body>
+  <div id="app">
+    <h1>{{mytitle}}</h1>
+
+<textarea placeholder="个性签名" cols="30" rows="10"></textarea>
+
+  </div>
+</body>
+<script src="./libs/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      mytitle:'hello vue2'
+    }
+  })
+</script>
+</html>

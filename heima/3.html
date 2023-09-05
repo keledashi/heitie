@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<title>v-on/v-bind</title>
+</head>
+<body>
+  <div id="app">
+    <h2>简单数量加减</h2>
+    <button v-on:mouseenter="count--" v-bind:disabled="count<=10">-</button>
+    <span>{{count}}</span>
+    <button @mouseenter="count++"  :disabled="add()">+</button>
+    <hr>
+
+    <div style="border: 1px solid black; width: 300px;height: 100px;">
+      <div style="font-weight: bold;font-size: 20px;margin-bottom: 30px;">斗战神自动售货机</div>
+      <button @click="five" :disabled="money<5">官银100万两=5元</button>
+      <button @click="nine" :disabled="money<9">官银200万两=9元</button>
+    </div>
+    <div>
+      账户余额【{{money>=0?money:money=0}}】元 
+    </div>
+    <button @click="resetMoney">重置余额</button>
+    <hr>
+    <h2>图片切换</h2>
+    <button @click="heroIndex--" :disabled="heroIndex<=0">上一张</button>
+    <button @click="heroIndex++" :disabled="heroIndex>=heroimgs.length-1">下一张</button>
+    <div style="border:2px solid red;width: 200px;">
+      <img :src="heroimgs[heroIndex]" style="vertical-align: bottom;" width="120">
+    </div>
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      count:10,
+      money:100,
+      heroimgs:[],
+      heroIndex:0
+    },
+    methods:{
+      add(){
+        return this.count >= 20
+      },
+      five(){
+        this.money-=5
+      },
+      nine(){
+        this.money-=9
+      },
+      resetMoney(){
+        this.money = 100
+      },
+      
+    },
+    mounted(){
+      for(let i = 0; i < 10; i++){
+        this.heroimgs.push(`../images/${i+1}.png`)    
+      }
+    }
+  })
+</script>
+</html>

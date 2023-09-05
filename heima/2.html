@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<title>v-else-if</title>
+</head>
+<body>
+  <div id="app">
+    <p v-if="sex===1">性别【男】</p>
+    <p v-else>性别【女】</p>
+    <hr>
+    <p v-if="score >=90">成绩：A</p>
+    <p v-else-if="score >= 80 && score < 90">成绩：B</p>
+    <p v-else-if="score >= 70 && score < 80">成绩：C</p>
+    <p v-else-if="score >= 60 && score < 70">成绩：D</p>
+    <p v-else>成绩：E</p>
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      sex:1,
+      score : 100,
+    }
+  })
+</script>
+</html>

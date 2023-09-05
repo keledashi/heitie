@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<title>v-html</title>
+</head>
+<body>
+  <div id="app">
+    <div v-html="mytitle">
+
+    </div>
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  const app = new Vue({
+    el:"#app",
+    data:{
+      mytitle:`<h1>这是一个标题，渲染html</h1>`
+    }
+  })
+</script>
+</html>
