@@ -10,7 +10,9 @@
   <div id="app">
     <h1>{{mytitle}}</h1>
 
-<textarea placeholder="个性签名" cols="30" rows="10"></textarea>
+    <ul>
+      <li v-for="item in orgs" key="item.id"><a :href="item.path">{{item.name}}</a></li>
+    </ul>
 
   </div>
 </body>
@@ -19,7 +21,11 @@
   const vm = new Vue({
     el:'#app',
     data:{
-      mytitle:'hello vue2'
+      mytitle:'hello vue 导航',
+      orgs:[
+        {id:1,name:"黑马",path:"heima/1.html"},
+        {id:2,name:"渡一",path:"duyi/1.html"},
+      ],
     }
   })
 </script>

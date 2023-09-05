@@ -9,6 +9,7 @@
     <div v-html="mytitle">
 
     </div>
+    <h3>{{org}}</h3>
   </div>
 </body>
 <script src="../libs/vue.js"></script>
@@ -16,7 +17,8 @@
   const app = new Vue({
     el:"#app",
     data:{
-      mytitle:`<h1>这是一个标题，渲染html</h1>`
+      mytitle:`<h1>这是一个标题，渲染html</h1>`,
+      org:"黑马"
     }
   })
 </script>
