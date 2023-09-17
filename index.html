@@ -11,7 +11,7 @@
     <h1>{{mytitle}}</h1>
 
     <ul>
-      <li v-for="item in orgs" key="item.id"><a :href="item.path">{{item.name}}</a></li>
+      <li v-for="item in orgs" :key="item.id"><a :href="item.path">{{item.name}}</a></li>
     </ul>
 
   </div>
