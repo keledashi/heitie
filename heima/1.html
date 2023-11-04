@@ -10,15 +10,36 @@
 
     </div>
     <h3>{{org}}</h3>
+    <ul>
+      <li v-for="(item,index) in list" :key="item.id"><a :href="item.path">{{index}}-{{item.text}}</a></li>
+    </ul>
   </div>
 </body>
 <script src="../libs/vue.js"></script>
 <script>
+  Vue.config.productionTip = false
   const app = new Vue({
     el:"#app",
     data:{
       mytitle:`<h1>这是一个标题，渲染html</h1>`,
-      org:"黑马"
+      org:"黑马",
+      list:[
+        {
+          id:1,
+          text:"分支判断",
+          path:"2.html"
+        },
+        {
+          id:2,
+          text:"运算学习",
+          path:"3.html"
+        },
+        {
+          id:3,
+          text:"函数methods",
+          path:"4.html"
+        },
+      ],
     }
   })
 </script>
