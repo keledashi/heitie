@@ -1,4 +1,4 @@
-# vue基础
+# ■ vue基础
 ## vue实例与模板语法
 - 创建实例 
 - 插值
@@ -8,12 +8,12 @@
 ## 计算属性与侦听器
 ## class与style绑定
 ## 组件化
-# vue-cli
+# ■ vue-cli
 
-# vue-router
+# ■ vue-router
 
-# vuex
+# ■ vuex
 
-# element-ui
+# ■ element-ui
 
-# vue3
+# ■ vue3
