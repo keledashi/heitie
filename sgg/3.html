@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>OKOK</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{title}}</h2>
+    <h3>性别：{{sex}}</h3>
+    <button type="button" @click="checkSex=!checkSex">切换性别</button>
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  Vue.config.productionTip = false
+  const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        title:"侦测器测试",
+        checkSex:true,
+      }
+    },
+    computed: {
+      sex(){
+        return this.checkSex?"男":"女"
+      }
+    },
+    methods: {
+      
+    },
+    watch:{
+      checkSex:{
+        immediate:true, // 一开始就监视
+        handler(xin,jiu){
+          console.log(`当前值【${xin}】, 上一个值【${jiu}】`);
+        }
+      },
+      sex:{
+        immediate:true, // 一开始就监视
+        handler(xin,jiu){
+          console.log(`当前值【${xin}】, 上一个值【${jiu}】`);
+        }
+      }
+    }
+  })
+</script>
+
+</html>

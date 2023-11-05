@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>OKOK</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{title}}</h2>
+    <input type="text" placeholder="姓氏" v-model="xing">
+    <hr>
+    <input type="text" placeholder="名字" v-model="ming">
+    <hr>
+    全名：{{fullName}}
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  Vue.config.productionTip = false
+  const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        title:"计算属性测试",
+        xing:"张",
+        ming:"三"
+      }
+    },
+    computed: {
+      fullName(){
+        return this.xing +"-" + this.ming
+      }
+    },
+    methods: {
+
+    }
+  })
+</script>
+
+</html>
