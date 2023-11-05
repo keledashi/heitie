@@ -11,6 +11,7 @@
     <h2>{{title}}</h2>
     <h3>性别：{{sex}}</h3>
     <button type="button" @click="checkSex=!checkSex">切换性别</button>
+    <button type="button" @click="delayLoad($event)">延时加载</button>
   </div>
 </body>
 <script src="../libs/vue.js"></script>
@@ -30,7 +31,13 @@
       }
     },
     methods: {
-      
+      delayLoad(e){
+        e.target.disabled = true
+        setTimeout(()=>{
+          console.log(this);
+          e.target.disabled = false
+        },1000)
+      }
     },
     watch:{
       checkSex:{
