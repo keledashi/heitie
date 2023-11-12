@@ -78,9 +78,26 @@
 - 局部注册
 - 全局注册
 ## 单文件组件
-
+- template
+- script
+- style
 # ■ vue-cli
-
+- 安装
+  ```
+  npm install -g @vue/cli
+  ```
+- 查看版本
+  ```
+  vue --version
+  ```
+- 创建工程
+  ```
+  vue create xxx
+  ```
+- 启动项目
+  ```
+  npm run serve
+  ```
 # ■ vue-router
 
 # ■ vuex
