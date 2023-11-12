@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta charset='utf-8'>
+  <title>非单文件组件</title>
+  <style>
+    p{
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h3>{{title}}</h3>
+    <hr>
+    <xuexiao></xuexiao>
+    <hr>
+    <xue-sheng></xue-sheng>
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+  // 创建school组件
+  const school = Vue.extend({
+    template: `
+      <div>
+        <p>校名:{{name}}</p>
+        <p>校训:{{slogan}}</p>
+      </div>
+    `,
+    data() {
+      return {
+        name:"群众路小学",
+        slogan:"为中华之崛起而读书！"
+      }
+    }
+  })
+  // 创建student组件(Vue.extend可以省略)
+  const student = {
+    template:`
+      <div>
+        <p>姓名:{{name}}</p>
+        <p>年龄:{{age}}</p>
+      </div>
+    `,
+    data(){
+      return {
+        name:"坤坤",
+        age:18
+      }
+    }
+  }
+
+
+  new Vue({
+    el: "#app",
+    data() {
+      return {
+        title: "extend版组件"
+      }
+    },
+    components:{
+      xuexiao:school,
+      XueSheng:student
+    }
+  })
+
+
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta charset='utf-8'>
+  <title>非单文件组件嵌套</title>
+</head>
+
+<body>
+  <div id="main">
+
+  </div>
+</body>
+<script src="../libs/vue.js"></script>
+<script>
+
+  const student = {
+    template: `
+      <div>
+        <p>姓名:{{name}}</p>  
+        <p>年龄:{{age}}</p>  
+      </div>
+    `,
+    data() {
+      return {
+        name: "赵日天",
+        age: 20
+      }
+    }
+  }
+  const school = {
+    template: `
+      <div>
+        <p>校名【{{name}}】</p>
+        <p>地址【{{address}}】</p>
+        <hr>
+        <student></student>
+      </div>
+    `,
+    data() {
+      return {
+        name: "闽江学院附中",
+        address: "大树兜巷35号"
+      }
+    },
+    components: {
+      student
+    }
+  }
+
+  const hello = {
+    template: `
+      <div>
+        <h3>欢迎来到组件嵌套</h3>
+      </div>  
+      `,
+  }
+
+  const app = {
+    components: {
+      school, hello
+    },
+    template: `
+      <div>
+        <hello></hello>
+        <hr style="border:2px solid red">
+        <school></school>
+      </div>
+    `
+  }
+
+  new Vue({
+    template: `
+      <app></app>
+    `,
+    el: "#main",
+    components: {
+      app
+    }
+  })
+
+</script>
+
+</html>
